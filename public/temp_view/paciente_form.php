@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro de Paciente</h1>
-    <form action="processar_cadastro.php" method="POST">
+    <form action="/cadastrar_paciente" method="POST">
         <label for="nome_completo">Nome Completo:</label>
         <input type="text" id="nome_completo" name="nome_completo" required><br>
 

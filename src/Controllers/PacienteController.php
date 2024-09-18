@@ -28,7 +28,7 @@ class PacienteController
 
             try {
                 // Insere o paciente no banco de dados
-                Capsule::table('pacientes')->insert([
+                Capsule::table('paciente')->insert([
                     'nome_completo' => $nome_completo,
                     'cpf' => $cpf,
                     'data_nascimento' => $data_nascimento,
@@ -49,7 +49,7 @@ class PacienteController
             }
         } else {
             // Se não for um POST, redireciona para o formulário
-            header('Location: /views/paciente_form.php');
+            header('Location: /temp_view/paciente_form.php');
             exit;
         }
     }

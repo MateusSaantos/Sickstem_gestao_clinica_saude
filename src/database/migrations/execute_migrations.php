@@ -9,8 +9,8 @@ $database = Database::getInstance();
 
 // Lista de migrações a serem executadas
 $migrations = [
-    'src/migrations/2024_09_17_000002_create_pacientes_table.php',
-    '',
+    'src/database/migrations/2024_09_17_000002_create_pacientes_table.php',
+    'src/database/migrations/2024_09_17_000002_create_medicos_table.php',
 ];
 
 // Executa as migrações

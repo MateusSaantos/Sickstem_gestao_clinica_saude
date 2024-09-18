@@ -1,14 +1,21 @@
 <?php
 
+use App\Controllers\MedicoController;
 use App\Controllers\PacienteController;
+use App\Models\Medico;
 
 // Define as rotas
 $routes = [
     '/' => function() {
         include '../public/temp_view/paciente_form.php'; // Página do formulário
+        include '../public/temp_view/medico_form.php'; // Página do formulário
     },
     '/cadastrar_paciente' => function() {
         $controller = new PacienteController();
+        $controller->cadastrar();
+    },
+    '/cadastrar_medico' => function() {
+        $controller = new MedicoController();
         $controller->cadastrar();
     },
 ];

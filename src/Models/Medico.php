@@ -4,31 +4,29 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class Medico extends Model
 {
     // Nome da tabela associada ao Model
-    protected $table = 'paciente';
+    protected $table = 'medicos';
 
     // Chave primária da tabela
     protected $primaryKey = 'id';
 
     // Campos que podem ser atribuídos em massa (mass assignment)
     protected $fillable = [
-        'nome_completo',
+        'nome',
+        'crm',
         'cpf',
-        'data_nascimento',
-        'sexo',
+        'especialidade',
         'telefone',
-        'nome_mae',
-        'nome_responsavel',
-        'telefone_responsavel',
-        'convenio',
-        'plano_saude'
+        'email',
+        'informacoes_extra'
     ];
 
-    // Campos que devem ser tratados como datas
+    // Campos que devem ser tratados como datas (se necessário)
+    // Caso 'informacoes_extra' não seja um campo de data, ele não deve estar aqui
     protected $dates = [
-        'data_nascimento',
+        // Adicione campos de data se houver
     ];
 
     // Desabilita os timestamps padrão se não forem necessários
