@@ -6,6 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\MedicoController' => $baseDir . '/src/Controllers/MedicoController.php',
+    'App\\Controllers\\PacienteController' => $baseDir . '/src/Controllers/PacienteController.php',
+    'App\\Models\\Medico' => $baseDir . '/src/Models/Medico.php',
+    'App\\Models\\Paciente' => $baseDir . '/src/Models/Paciente.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',
     'Brick\\Math\\BigInteger' => $vendorDir . '/brick/math/src/BigInteger.php',

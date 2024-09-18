@@ -134,6 +134,10 @@ class ComposerStaticInitb4a779d3ceaadce95f059bd08a5e589b
     );
 
     public static $classMap = array (
+        'App\\Controllers\\MedicoController' => __DIR__ . '/../..' . '/src/Controllers/MedicoController.php',
+        'App\\Controllers\\PacienteController' => __DIR__ . '/../..' . '/src/Controllers/PacienteController.php',
+        'App\\Models\\Medico' => __DIR__ . '/../..' . '/src/Models/Medico.php',
+        'App\\Models\\Paciente' => __DIR__ . '/../..' . '/src/Models/Paciente.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
