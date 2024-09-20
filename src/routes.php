@@ -2,22 +2,20 @@
 
 use App\Controllers\MedicoController;
 use App\Controllers\PacienteController;
-use App\Models\Medico;
 
 // Define as rotas
 $routes = [
     '/' => function() {
-        //include '../public/temp_view/paciente_form.php'; // Página do formulário
-        $controller = new PacienteController();
-        $controller->listarPacientes();
-        //include '../public/temp_view/medico_form.php'; // Página do formulário
+        // Exibe a lista de pacientes
+        $controller_paciente = new PacienteController();
+        $controller_paciente->listarPacientes();
+        $controller_medico = new MedicoController();
+        $controller_medico->listarMedicos();
+
     },
+    // Rotas para Paciente
     '/cadastrar_paciente' => function() {
         $controller = new PacienteController();
-        $controller->cadastrar();
-    },
-    '/cadastrar_medico' => function() {
-        $controller = new MedicoController();
         $controller->cadastrar();
     },
     '/paciente/cadastrar_view' => function() {
@@ -33,6 +31,23 @@ $routes = [
     },
     '/paciente/editar' => function() {
         $controller = new PacienteController();
+        $controller->atualizar();
+    },
+    // Rotas para Médico
+    '/cadastrar_medico' => function() {
+        $controller = new MedicoController();
+        $controller->cadastrar();
+    },
+    '/medico/visualizar_view/(\d+)' => function($id) {
+        $controller = new MedicoController();
+        $controller->visualizar($id); // Passa o ID do médico para o método visualizar
+    },
+    '/medico/editar_view/(\d+)' => function($id) {
+        $controller = new MedicoController();
+        $controller->editar($id); // Passa o ID do médico para o método editar
+    },
+    '/medico/editar' => function() {
+        $controller = new MedicoController();
         $controller->atualizar();
     },
 ];
