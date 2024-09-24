@@ -2,16 +2,20 @@
 
 use App\Controllers\MedicoController;
 use App\Controllers\PacienteController;
+use App\Controllers\ConsultaController;
 
 // Define as rotas
 $routes = [
     '/' => function() {
-        // Exibe a lista de pacientes
+        // Exibe a lista de pacientes e médicos
         $controller_paciente = new PacienteController();
         $controller_paciente->listarPacientes();
+        
         $controller_medico = new MedicoController();
         $controller_medico->listarMedicos();
 
+        $controller_consulta = new ConsultaController();
+        $controller_consulta->listarConsultas();
     },
     // Rotas para Paciente
     '/cadastrar_paciente' => function() {
@@ -33,10 +37,14 @@ $routes = [
         $controller = new PacienteController();
         $controller->atualizar();
     },
+    
     // Rotas para Médico
     '/cadastrar_medico' => function() {
         $controller = new MedicoController();
         $controller->cadastrar();
+    },
+    '/medico/cadastrar_view' => function() {
+        include '../public/temp_view/medico_form.php'; // Página do formulário
     },
     '/medico/visualizar_view/(\d+)' => function($id) {
         $controller = new MedicoController();
@@ -48,6 +56,28 @@ $routes = [
     },
     '/medico/editar' => function() {
         $controller = new MedicoController();
+        $controller->atualizar();
+    },
+
+    // Rotas para Consulta
+    '/cadastrar_consulta' => function() {
+        $controller = new ConsultaController();
+        $controller->cadastrar();
+    },
+    '/consulta/cadastrar_view' => function() {
+        $controller = new ConsultaController();
+        $controller->cadastrarView(); // Página do formulário
+    },
+    '/consulta/visualizar_view/(\d+)' => function($id) {
+        $controller = new ConsultaController();
+        $controller->visualizar($id); // Passa o ID da consulta para o método visualizar
+    },
+    '/consulta/editar_view/(\d+)' => function($id) {
+        $controller = new ConsultaController();
+        $controller->editar($id); // Passa o ID da consulta para o método editar
+    },
+    '/consulta/editar' => function() {
+        $controller = new ConsultaController();
         $controller->atualizar();
     },
 ];
