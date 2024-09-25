@@ -1,0 +1,49 @@
+
+    /*------------ Login container ------------*/
+.box-area {
+    width: 1100px;
+}
+
+    /*------------ Right box ------------*/
+.right-box {
+    padding: 40px 30px 40px 40px;
+}
+
+#areaCadastro{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+
+#nome_completo,
+#cpf,
+#data_nascimento,
+#sexo,
+#telefone,
+#nome_mae,
+#nome_responsavel,
+#telefone_responsavel,
+#convenio,
+#plano_saude {
+    color: #0000;
+    margin-bottom: 7px;
+    width: 90%;
+    height: 30px;
+}
+
+#cadastroPaciente{
+    color: #06A3DA;
+}
+
+#paciente{
+    border-radius: 100px;
+}
+
+#botaoSalvar{
+    margin-top: 10px;
+}
+
+#text{
+    color: #000;
+}
