@@ -1,5 +1,4 @@
 <?php
-
 use App\Controllers\MedicoController;
 use App\Controllers\PacienteController;
 use App\Controllers\ConsultaController;
@@ -76,9 +75,9 @@ $routes = [
         $controller = new ConsultaController();
         $controller->editar($id); // Passa o ID da consulta para o método editar
     },
-    '/consulta/editar' => function() {
+    '/consulta/atualizar/(\d+)' => function($id) {
         $controller = new ConsultaController();
-        $controller->atualizar();
+        $controller->atualizar($id); // Passa o ID da consulta para o método atualizar
     },
 ];
 

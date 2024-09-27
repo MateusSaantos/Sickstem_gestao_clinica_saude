@@ -74,80 +74,67 @@ class ConsultaController
     require_once '../public/temp_view/consultas_list.php';
 }
 
-    public function visualizar($id)
-    {
-        // Inicializa a conexão com o banco de dados
-        $database = Database::getInstance();
+public function visualizar($id)
+{
+    // Inicializa a conexão com o banco de dados
+    $capsule = Database::getInstance()->getCapsule(); // Acesse o Capsule
 
-        // Busca o médico pelo ID
-        $medico = Consulta::find($id);
+    // Busca a consulta pelo ID, incluindo os dados do médico e do paciente
+    $consulta = $capsule::table('consulta as c')
+        ->join('medicos as m', 'c.medico_id', '=', 'm.id')
+        ->join('paciente as p', 'c.paciente_id', '=', 'p.id')
+        ->select('c.*', 'm.nome as medico_nome', 'p.nome_completo as paciente_nome')
+        ->where('c.id', $id)
+        ->first(); // Utilize first() para obter um único resultado
 
-        if ($medico) {
-            // Inclui a view com os dados do médico
-            include '../public/temp_view/consulta_view.php';
-        } else {
-            echo "Consulta não encontrado.";
-        }
+    if ($consulta) {
+        // Inclui a view com os dados da consulta
+        include '../public/temp_view/consulta_view.php';
+    } else {
+        echo "Consulta não encontrada.";
     }
+}
 
-    public function editar($id)
-    {
-        // Inicializa a conexão com o banco de dados
-        $database = Database::getInstance();
 
-        // Busca o médico pelo ID
-        $medico = Consulta::find($id);
+public function editar($id)
+{
+    // Inicializa a conexão com o banco de dados
+    $database = Database::getInstance();
 
-        // Verifica se o médico foi encontrado
-        if ($medico) {
-            // Inclui a view com o formulário de edição
-            include '../public/temp_view/medico_edit.php';
-        } else {
-            // Médico não encontrado
-            echo "Consulta não encontrada.";
-        }
+    // Busca a consulta pelo ID
+    $consulta = Consulta::find($id);
+
+    if ($consulta) {
+        // Inclui a view de edição com os dados da consulta
+        include '../public/temp_view/consulta_edit.php';
+    } else {
+        echo "Consulta não encontrada.";
     }
+}
 
     // Método para atualizar uma consulta
-    public function atualizar()
-    {
-        // Verifica se o método é POST
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Obtém os dados do formulário
-            $id = $_POST['id'];
-            $medico_id = $_POST['medico_id'];
-            $paciente_id = $_POST['paciente_id'];
-            $data = $_POST['data'];
-            $hora = $_POST['hora'];
-            $valor = $_POST['valor'];
-            $consultorio = $_POST['consultorio'];
+    public function atualizar($id)
+{
+    $database = Database::getInstance();
 
-            // Inicializa a conexão com o banco de dados
-            $database = Database::getInstance();
+    // Obtém os dados do formulário
+    $consultorio = $_POST['consultorio'];
+    $horario = $_POST['horario'];
 
-            try {
-                // Atualiza os dados da consulta
-                Consulta::where('id', $id)->update([
-                    'medico_id' => $medico_id,
-                    'paciente_id' => $paciente_id,
-                    'data' => $data,
-                    'hora' => $hora,
-                    'valor' => $valor,
-                    'consultorio' => $consultorio
-                ]);
+    // Atualiza a consulta
+    $consulta = Consulta::find($id);
+    if ($consulta) {
+        $consulta->consultorio = $consultorio;
+        $consulta->hora = $horario;
+        $consulta->save(); // Salva as alterações
 
-                // Redireciona ou exibe uma mensagem de sucesso
-                echo "Consulta atualizada com sucesso!";
-            } catch (\Exception $e) {
-                // Exibe mensagem de erro
-                echo "Erro ao atualizar consulta: " . $e->getMessage();
-            }
-        } else {
-            // Se não for um POST, redireciona para a lista de consultas
-            header('Location: /consulta/listar');
-            exit;
-        }
+        echo "Consulta atualizada com sucesso!";
+        // Redirecionar ou incluir a view com a consulta atualizada
+    } else {
+        echo "Consulta não encontrada.";
     }
+}
+
 
     public function cadastrarView()
     {
@@ -161,4 +148,6 @@ class ConsultaController
         // Envia os médicos e pacientes para a view
         include '../public/temp_view/consulta_form.php';
     }
+
+    
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Consulta extends Model
 {
     // Nome da tabela associada ao Model
-    protected $table = 'consultas';
+    protected $table = 'consulta';
 
     // Chave primária da tabela
     protected $primaryKey = 'id';
