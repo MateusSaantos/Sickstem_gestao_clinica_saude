@@ -6,16 +6,25 @@ use App\Controllers\ConsultaController;
 // Define as rotas
 $routes = [
     '/' => function() {
-        // Exibe a lista de pacientes e médicos
-        $controller_paciente = new PacienteController();
-        $controller_paciente->listarPacientes();
-        
-        $controller_medico = new MedicoController();
-        $controller_medico->listarMedicos();
-
-        $controller_consulta = new ConsultaController();
-        $controller_consulta->listarConsultas();
+        include '../public/principal.html';
     },
+
+    // Rotas para listar Pacientes, Médicos e Consultas
+    '/listar_pacientes' => function() {
+        $controller = new PacienteController();
+        $controller->listarPacientes();
+    },
+    
+    '/listar_medicos' => function() {
+        $controller = new MedicoController();
+        $controller->listarMedicos();
+    },
+
+    '/listar_consultas' => function() {
+        $controller = new ConsultaController();
+        $controller->listarConsultas();
+    },
+
     // Rotas para Paciente
     '/cadastrar_paciente' => function() {
         $controller = new PacienteController();
@@ -36,7 +45,7 @@ $routes = [
         $controller = new PacienteController();
         $controller->atualizar();
     },
-    
+
     // Rotas para Médico
     '/cadastrar_medico' => function() {
         $controller = new MedicoController();
