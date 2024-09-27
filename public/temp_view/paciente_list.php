@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Lista de Pacientes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
@@ -31,6 +32,7 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/paciente.css" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Navbar Start -->
@@ -74,39 +76,54 @@
     </nav>
     <!-- Navbar End -->
 
-    <h1>Lista de Pacientes</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome Completo</th>
-                <th>CPF</th>
-                <th>Data de Nascimento</th>
-                <th>Telefone</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            // Exibe os pacientes na tabela
-            foreach ($pacientesArray as $paciente) {
-                echo "<tr>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="border rounded-3 p-5  mt-5 shadow box-area">
+                    <h1 id="listaPaciente">Lista de Pacientes</h1><br>
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="search-container">
+                            <form class="d-flex" role="search" id="searchForm">
+                                <input class="form-control me-3" type="search" placeholder="Nome do paciente" aria-label="Search" id="searchInput" autofocus>
+                                <i id="search-icon" class="fa fa-search"></i>
+                            </form>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome Completo</th>
+                                    <th>CPF</th>
+                                    <th>Data de Nascimento</th>
+                                    <th>Telefone</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Exibe os pacientes na tabela
+                                foreach ($pacientesArray as $paciente) {
+                                    echo "<tr>
                         <td>{$paciente->id}</td>
                         <td>{$paciente->nome_completo}</td>
                         <td>{$paciente->cpf}</td>
                         <td>{$paciente->data_nascimento}</td>
                         <td>{$paciente->telefone}</td>
                         <td>
-                            <a href='/paciente/visualizar_view/{$paciente->id}'>Visualizar</a>
-                            <a href='/paciente/editar_view/{$paciente->id}'>Editar</a>
-                            <a href='/paciente/cadastrar_view'>Cadastrar</a>
+                            <a href='/paciente/visualizar_view/{$paciente->id}' class='btn btn-primary'>Visualizar</a>
+                            <a href='/paciente/editar_view/{$paciente->id}' class='btn btn-warning'>Editar</a>
+                            <a href='/paciente/cadastrar_view' class='btn btn-success'>Cadastrar</a>
                         </td>
                     </tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
+
 </html>

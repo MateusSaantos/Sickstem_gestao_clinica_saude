@@ -68,7 +68,7 @@ class PacienteController
         print_r($pacientesArray);
 
         // Envia os pacientes para a view
-        require_once '../public/temp_view/pacientes_list.php';
+        require_once '../public/temp_view/paciente_list.php';
     }
 
     // Visualizar paciente

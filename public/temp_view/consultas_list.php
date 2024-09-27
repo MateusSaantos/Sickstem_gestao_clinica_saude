@@ -25,21 +25,25 @@
         <tbody>
             <?php
             // Exibe as consultas na tabela
-            foreach ($consultasArray as $consulta) {
-                echo "<tr>
-                        <td>{$consulta->id}</td>
-                        <td>{$consulta->medico_nome}</td> <!-- Adapte conforme necessário -->
-                        <td>{$consulta->paciente_nome}</td> <!-- Adapte conforme necessário -->
-                        <td>{$consulta->data}</td>
-                        <td>{$consulta->hora}</td>
-                        <td>R$ {$consulta->valor}</td>
-                        <td>{$consulta->consultorio}</td>
-                        <td>
-                            <a href='/consulta/visualizar_view/{$consulta->id}'>Visualizar</a>
-                            <a href='/consulta/editar_view/{$consulta->id}'>Editar</a>
-                            <a href='/consulta/cadastrar_view'>Cadastrar</a>
-                        </td>
-                    </tr>";
+            if (!empty($consultasArray)) {
+                foreach ($consultasArray as $consulta) {
+                    echo "<tr>
+                            <td>{$consulta->id}</td>
+                            <td>{$consulta->medico_nome}</td>
+                            <td>{$consulta->paciente_nome}</td>
+                            <td>{$consulta->data}</td>
+                            <td>{$consulta->hora}</td>
+                            <td>R$ {$consulta->valor}</td>
+                            <td>{$consulta->consultorio}</td>
+                            <td>
+                                <a href='/consulta/visualizar_view/{$consulta->id}'>Visualizar</a>
+                                <a href='/consulta/editar_view/{$consulta->id}'>Editar</a>
+                                <a href='/consulta/cadastrar_view'>Cadastrar</a>
+                            </td>
+                        </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='8'>Nenhuma consulta encontrada.</td></tr>";
             }
             ?>
         </tbody>

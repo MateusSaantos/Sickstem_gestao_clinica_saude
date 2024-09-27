@@ -52,19 +52,27 @@ class ConsultaController
 
     // Método para listar todas as consultas
     public function listarConsultas()
-    {
-        // Inicializa a conexão com o banco de dados
-        $database = Database::getInstance();
+{
+    // Inicializa a conexão com o banco de dados
+    $database = Database::getInstance();
 
-        // Busca todas as consultas no banco de dados
-        $consultas = Capsule::table('consulta')->get();
+    // Busca todas as consultas com nomes dos médicos e pacientes
+    $consultas = Capsule::table('consulta') // Corrigido o nome da tabela para 'consultas'
+        ->join('medicos', 'consulta.medico_id', '=', 'medicos.id') // Corrigido o nome da tabela para 'medicos'
+        ->join('paciente', 'consulta.paciente_id', '=', 'paciente.id') // Corrigido o nome da tabela para 'pacientes'
+        ->select(
+            'consulta.*',
+            'medicos.nome as medico_nome', // Corrigido o nome da tabela para 'medicos'
+            'paciente.nome_completo as paciente_nome' // Corrigido o nome da tabela para 'pacientes'
+        )
+        ->get();
 
-        // Converte para array
-        $consultasArray = $consultas->toArray();
+    // Converte para array
+    $consultasArray = $consultas->toArray();
 
-        // Envia as consultas para a view
-        require_once '../public/temp_view/consultas_list.php';
-    }
+    // Envia as consultas para a view
+    require_once '../public/temp_view/consultas_list.php';
+}
 
     public function visualizar($id)
     {

@@ -15,7 +15,6 @@
     border-radius: 20px;
 }
 
-
 #nome_completo,
 #cpf,
 #data_nascimento,
@@ -36,6 +35,10 @@
     color: #06A3DA;
 }
 
+#listaPaciente{
+    color: #06A3DA;
+}
+
 #paciente{
     border-radius: 100px;
 }
@@ -47,3 +50,49 @@
 #text{
     color: #000;
 }
+
+.d-flex{
+    padding-bottom: 10px;
+}
+
+th, td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ajuste conforme necessário */
+  }
+
+#searchInput {
+    border: 2px solid #007bff;
+    /* Borda destacada */
+    border-radius: 25px;
+    /* Borda arredondada */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra leve */
+    outline: none;
+    /* Remove o contorno padrão ao focar */
+}
+
+#searchInput:focus {
+    border-color: #0056b3;
+    /* Cor da borda ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
+    /* Sombra ao focar */
+}
+
+#search-icon {
+    position: absolute;
+    right: 20px; /* Aumenta a distância da borda direita */
+    top: 45%; /* Move o ícone para cima */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    color: #007bff; /* Cor do ícone */
+    font-size: 20px; /* Tamanho do ícone */
+  }
