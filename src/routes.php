@@ -2,6 +2,7 @@
 use App\Controllers\MedicoController;
 use App\Controllers\PacienteController;
 use App\Controllers\ConsultaController;
+use App\Facades\RelatorioFacade;
 
 // Define as rotas
 $routes = [
@@ -88,6 +89,12 @@ $routes = [
         $controller = new ConsultaController();
         $controller->atualizar($id); // Passa o ID da consulta para o método atualizar
     },
+    // Rota para gerar o relatório de consultas
+    '/relatorios/consultas' => function() {
+    $relatorio = new RelatorioFacade();
+    $relatorio->gerarRelatorioConsultas();
+    },
+
 ];
 
 // Obtém a URL solicitada

@@ -149,5 +149,11 @@ public function editar($id)
         include '../public/temp_view/consulta_form.php';
     }
 
+    public function listarConsultasComDetalhes()
+    {
+        $database = Database::getInstance();
+        // Obtem todas as consultas junto com os pacientes e médicos
+        return Consulta::with(['paciente', 'medico'])->get();
+    }
     
 }
