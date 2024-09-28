@@ -125,10 +125,10 @@
             <!-- Caixa da Direita -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4169E1;">
                 <div class="featured-image mb-3">
-                    <img id="paciente" src="../img/price-2.jpg" class="img-fluid" style="width: 250px;">
+                    <img id="paciente" src="../img/testimonial-1.jpg" class="img-fluid" style="width: 250px;">
                 </div>
                 <p class="text-white fs-2 mb-2">Registre seu paciente!</p>
-                <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Ajude a monitorar as doenças da sua cidade. Saúde em primeiro lugar!</small>
+                <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Obtenha os dados dos seus pacientes de forma prática!</small>
             </div>
         </div>
     </div>

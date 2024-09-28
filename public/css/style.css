@@ -6,7 +6,7 @@
     --dark: #091E3E;
 }
 
-input[type="text"], input[type="date"], select {
+input[type="text"], input[type="date"], input[type="time"], input[type="email"], input[type="number"], textarea, select {
     color: #000 !important; /* Força o texto a ser preto */
 }
 
@@ -26,6 +26,10 @@ h5,
 h6,
 .font-weight-medium {
     font-weight: 500 !important;
+}
+
+#textSobre{
+    text-align: justify;
 }
 
 .btn {

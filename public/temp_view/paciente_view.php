@@ -26,11 +26,17 @@
     <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
+
 
     <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/paciente.css" rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet">
+    <link href="../public/css/paciente.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +86,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="border rounded-3 p-5  mt-5 shadow box-area">
-                    <h1>Detalhes do Paciente</h1>
+                    <h1 id="detalhes">Detalhes do Paciente</h1>
                     <p><strong>Nome Completo:</strong> <?= htmlspecialchars($paciente->nome_completo) ?></p>
                     <p><strong>CPF:</strong> <?= htmlspecialchars($paciente->cpf) ?></p>
                     <p><strong>Data de Nascimento:</strong> <?= htmlspecialchars($paciente->data_nascimento) ?></p>
