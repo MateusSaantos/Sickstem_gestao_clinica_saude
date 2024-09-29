@@ -26,8 +26,8 @@ class RelatorioFacade
     {
         // Obtém as consultas com detalhes dos pacientes e médicos
         $consultas = $this->consultaController->listarConsultasComDetalhes();
-        $consultas_paciente =$this->pacienteController->listarPacientes();
-        $consultas_medicos =$this->medicoController->listarMedicos();
+        //$consultas_paciente =$this->pacienteController->listarPacientes();
+        //$consultas_medicos =$this->medicoController->listarMedicos();
 
         // Exibe o relatório
         $this->exibirRelatorio($consultas);
