@@ -20,7 +20,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -31,7 +36,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary">Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -82,13 +87,13 @@
                             <label for="nome_completo">Nome Completo:</label>
                             <input type="text" id="nome_completo" name="nome_completo" value="<?= $paciente->nome_completo ?>" required><br>
 
-                            <label for="cpf">CPF:</label>
+                            <label for="cpf">CPF:</label><br>
                             <input type="text" id="cpf" name="cpf" value="<?= $paciente->cpf ?>" required><br>
 
                             <label for="data_nascimento">Data de Nascimento:</label>
                             <input type="date" id="data_nascimento" name="data_nascimento" value="<?= $paciente->data_nascimento ?>" required><br>
 
-                            <label for="sexo">Sexo:</label>
+                            <label for="sexo">Sexo:</label><br>
                             <select id="sexo" name="sexo" required>
                                 <option value="M" <?= $paciente->sexo == 'M' ? 'selected' : '' ?>>Masculino</option>
                                 <option value="F" <?= $paciente->sexo == 'F' ? 'selected' : '' ?>>Feminino</option>
@@ -112,7 +117,8 @@
                             <label for="plano_saude">Plano de Saúde:</label>
                             <input type="text" id="plano_saude" name="plano_saude" value="<?= $paciente->plano_saude ?>" required><br>
 
-                            <input type="submit" value="Atualizar">
+                            <input type="submit" class='btn btn-primary' value="Atualizar"><br><br>
+                            <a href="/listar_pacientes" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>
@@ -120,9 +126,9 @@
             <!-- Caixa da Direita -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4169E1;">
                 <div class="featured-image mb-3">
-                    <img id="paciente" src="../img/testimonial-1.jpg" class="img-fluid" style="width: 250px;">
+                    <img id="paciente"  class="img-fluid" style="width: 250px;">
                 </div>
-                <p class="text-white fs-2 mb-2">Registre seu paciente!</p>
+                <p class="text-white fs-2 mb-2">Edite seu paciente!</p>
                 <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Obtenha os dados dos seus pacientes de forma prática!</small>
             </div>
         </div>

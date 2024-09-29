@@ -119,7 +119,8 @@
                             <label for="consultorio">Consultório:</label>
                             <input type="text" id="consultorio" name="consultorio" required><br>
 
-                            <input id="botaoSalvar" class="btn btn-primary" type="submit" value="Cadastrar">
+                            <input id="botaoSalvar" class="btn btn-primary" type="submit" value="Cadastrar"><br><br>
+                            <a href="/listar_consultas" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>

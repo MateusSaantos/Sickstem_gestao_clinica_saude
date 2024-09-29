@@ -44,7 +44,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -98,13 +98,15 @@
                     <p><strong>Convênio:</strong> <?= htmlspecialchars($paciente->convenio) ?></p>
                     <p><strong>Plano de Saúde:</strong> <?= htmlspecialchars($paciente->plano_saude) ?></p>
 
+                    <a href="/listar_pacientes" class='btn btn-primary'>Voltar à Lista</a>
                 </div>
+                
             </div>
+
         </div>
     </div>
 
-    <a href="/paciente/editar?id=<?= htmlspecialchars($paciente->id) ?>">Editar Paciente</a>
-    <a href="/paciente/listar">Voltar à Lista</a>
+    <!-- <a href='/paciente/editar_view/{$paciente->id}'>Editar Paciente</a> -->
 </body>
 
 </html>

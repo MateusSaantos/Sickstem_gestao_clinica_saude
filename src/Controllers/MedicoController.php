@@ -59,9 +59,6 @@ class MedicoController
     // Converte para array
     $medicosArray = $medicos->toArray();
 
-    // Para depuração, exibe os médicos
-    print_r($medicosArray);
-
     // Envia os médicos para a view
     require_once '../public/temp_view/medicos_list.php';
     }

@@ -26,7 +26,12 @@
     <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -38,7 +43,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -88,7 +93,7 @@
                     <p><strong>Médico:</strong> <?= $consulta->medico_nome ?></p>
                     <p><strong>Paciente:</strong> <?= $consulta->paciente_nome ?></p>
 
-                    <a href="/consulta/editar_view/<?= $consulta->id ?>" class="btn btn-primary">Editar Consulta</a>
+                    <a href="/listar_consultas" class='btn btn-primary'>Voltar à Lista</a>
                 </div>
             </div>
         </div>

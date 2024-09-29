@@ -26,7 +26,12 @@
     <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -38,7 +43,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -89,7 +94,7 @@
                     <p><strong>Email:</strong> <?= $medico->email ?></p>
                     <p><strong>Informações Extras:</strong> <?= $medico->informacoes_extra ?></p>
 
-                    <a href="/medico/editar_view/<?= $medico->id ?>">Editar Médico</a>
+                    <a href="/listar_medicos" class='btn btn-primary'>Voltar à Lista</a>
                 </div>
             </div>
         </div>

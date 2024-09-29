@@ -26,7 +26,12 @@
     <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -38,7 +43,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -87,28 +92,29 @@
                         <form action="/medico/editar" method="POST">
                             <input type="hidden" name="id" value="<?= $medico->id ?>">
 
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" value="<?= $medico->nome ?>" required>
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" value="<?= $medico->nome ?>" required><br>
 
-                            <label for="crm">CRM:</label>
-                            <input type="text" id="crm" name="crm" value="<?= $medico->crm ?>" required>
+                            <label for="crm">CRM:</label><br>
+                            <input type="text" id="crm" name="crm" value="<?= $medico->crm ?>" required><br>
 
-                            <label for="cpf">CPF:</label>
-                            <input type="text" id="cpf" name="cpf" value="<?= $medico->cpf ?>" required>
+                            <label for="cpf">CPF:</label><br>
+                            <input type="text" id="cpf" name="cpf" value="<?= $medico->cpf ?>" required><br>
 
-                            <label for="especialidade">Especialidade:</label>
-                            <input type="text" id="especialidade" name="especialidade" value="<?= $medico->especialidade ?>" required>
+                            <label for="especialidade">Especialidade:</label><br>
+                            <input type="text" id="especialidade" name="especialidade" value="<?= $medico->especialidade ?>" required><br>
 
-                            <label for="telefone">Telefone:</label>
-                            <input type="text" id="telefone" name="telefone" value="<?= $medico->telefone ?>">
+                            <label for="telefone">Telefone:</label><br>
+                            <input type="text" id="telefone" name="telefone" value="<?= $medico->telefone ?>"><br>
 
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" value="<?= $medico->email ?>">
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" value="<?= $medico->email ?>"><br>
 
-                            <label for="informacoes_extra">Informações Extras:</label>
-                            <textarea id="informacoes_extra" name="informacoes_extra"><?= $medico->informacoes_extra ?></textarea>
+                            <label for="informacoes_extra">Informações Extras:</label><br>
+                            <textarea id="informacoes_extra" name="informacoes_extra"><?= $medico->informacoes_extra ?></textarea><br>
 
-                            <button id="botaoSalvar" class="btn btn-primary" type="submit">Atualizar Médico</button>
+                            <button id="botaoSalvar" class="btn btn-primary" type="submit">Atualizar Médico</button><br><br>
+                            <a href="/listar_medicos" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>
@@ -116,9 +122,9 @@
             <!-- Caixa da Direita -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4169E1;">
                 <div class="featured-image mb-3">
-                    <img id="medico" src="../img/team-1.jpg" class="img-fluid" style="width: 250px;">
+                    <img id="medico" class="img-fluid" style="width: 250px;">
                 </div>
-                <p class="text-white fs-2 mb-2">Registre Médicos</p>
+                <p class="text-white fs-2 mb-2">Editar Médicos</p>
                 <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Gerencie os médicos da sua clínica!</small>
             </div>
         </div>

@@ -117,7 +117,8 @@
                             <label for="plano_saude">Plano de Saúde:</label>
                             <input type="text" id="plano_saude" name="plano_saude" required><br>
 
-                            <input id="botaoSalvar" type="submit" class="btn btn-primary" value="Cadastrar">
+                            <input id="botaoSalvar" type="submit" class="btn btn-primary" value="Cadastrar"><br><br>
+                            <a href="/listar_pacientes" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>

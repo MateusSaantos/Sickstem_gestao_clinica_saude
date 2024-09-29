@@ -65,8 +65,6 @@ class PacienteController
         // Converte para array
         $pacientesArray = $pacientes->toArray();
 
-        print_r($pacientesArray);
-
         // Envia os pacientes para a view
         require_once '../public/temp_view/paciente_list.php';
     }

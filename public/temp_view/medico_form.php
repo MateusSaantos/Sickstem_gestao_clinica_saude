@@ -104,7 +104,8 @@
                             <label for="informacoes_extra">Informações Extras:</label>
                             <textarea id="informacoes_extra" name="informacoes_extra"></textarea><br>
 
-                            <input id="botaoSalvar" class="btn btn-primary" type="submit" value="Cadastrar">
+                            <input id="botaoSalvar" class="btn btn-primary" type="submit" value="Cadastrar"><br><br>
+                            <a href="/listar_medicos" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>

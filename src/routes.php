@@ -94,7 +94,7 @@ $routes = [
     $relatorio = new RelatorioFacade();
     $relatorio->gerarRelatorioConsultas();
     },
-
+    
 ];
 
 // Obtém a URL solicitada

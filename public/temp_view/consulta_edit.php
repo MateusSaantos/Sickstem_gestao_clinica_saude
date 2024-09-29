@@ -26,8 +26,12 @@
     <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        <?php include '../public/css/style.css'; ?>
+        <?php include '../public/css/bootstrap.min.css'; ?>
+        <?php include '../public/css/paciente.css'; ?>
+    </style>
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/consulta.css" rel="stylesheet">
@@ -38,7 +42,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -87,13 +91,14 @@
                         <form action="/consulta/atualizar/<?= $consulta->id ?>" method="POST">
                             <input type="hidden" name="id" value="<?= $consulta->id ?>">
 
-                            <label for="sala">Consultorio:</label>
-                            <input type="text" id="consultorio" name="consultorio" value="<?= $consulta->sala ?>" required>
+                            <label for="sala">Consultorio:</label><br>
+                            <input type="text" id="consultorio" name="consultorio" value="<?= $consulta->consultorio ?>" required><br>
 
-                            <label for="horario">Horário:</label>
-                            <input type="time" id="horario" name="horario" value="<?= $consulta->hora ?>" required>
+                            <label for="horario">Horário:</label><br>
+                            <input type="time" id="horario" name="horario" value="<?= $consulta->hora ?>" required><br>
 
-                            <button id="botaoSalvar" class="btn btn-primary" type="submit">Atualizar Consulta</button>
+                            <button id="botaoSalvar" class="btn btn-primary" type="submit">Atualizar Consulta</button><br><br>
+                            <a href="/listar_consultas" class='btn btn-primary'>Voltar à Lista</a>
                         </form>
                     </div>
                 </div>
@@ -101,9 +106,9 @@
             <!-- Caixa da Direita -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4169E1;">
                 <div class="featured-image mb-3">
-                    <img id="consulta" src="../img/team-2.jpg" class="img-fluid" style="width: 250px;">
+                    <img id="consulta"  class="img-fluid" style="width: 250px;">
                 </div>
-                <p class="text-white fs-2 mb-2">Registre Consultas</p>
+                <p class="text-white fs-2 mb-2">Edite Consultas</p>
                 <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Gerencie as consultas da sua clínica!</small>
             </div>
         </div>
