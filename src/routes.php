@@ -9,7 +9,9 @@ $routes = [
     '/' => function() {
         include '../public/principal.html';
     },
-
+    '/public/principal' => function() {
+        include '../public/principal.html';
+    },
     // Rotas para listar Pacientes, Médicos e Consultas
     '/listar_pacientes' => function() {
         $controller = new PacienteController();

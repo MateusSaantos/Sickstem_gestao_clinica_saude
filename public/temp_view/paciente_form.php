@@ -34,48 +34,52 @@
 </head>
 
 <body>
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><img id="icon" src="../img/logo-icon.png" alt="logo"></i>Sickstem</h1>
+        <a href=../../ class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"></i>Sickstem Administrativo</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Página Inicial</a>
-                <a href="about.html" class="nav-item nav-link">Sobre</a>
+                <a href=../public/principal.html class="nav-item nav-link active">Página Inicial</a>
+                <a href="#sobre" class="nav-item nav-link">Sobre</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Consulta</a>
                     <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Cadastrar Consulta</a>
-                        <a href="team.html" class="dropdown-item">Listar Consultas</a>
+                        <a href=/consulta/cadastrar_view class="dropdown-item">Cadastrar Consulta</a>
+                        <a href=/listar_consultas class="dropdown-item">Listar Consultas</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paciente</a>
                     <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Cadastrar Paciente</a>
-                        <a href="team.html" class="dropdown-item">Listar Paciente</a>
+                        <a href=/paciente/cadastrar_view class="dropdown-item">Cadastrar Paciente</a>
+                        <a href=/listar_pacientes class="dropdown-item">Listar Paciente</a>
                     </div>
                 </div>
-                <div class="nav-item dropdown"></div>
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Médico</a>
-                <div class="dropdown-menu m-0">
-                    <a href="price.html" class="dropdown-item">Cadastrar Médico</a>
-                    <a href="team.html" class="dropdown-item">Listar Médicos</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Médico</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="/medico/cadastrar_view" class="dropdown-item">Cadastrar Médico</a>
+                        <a href="/listar_medicos" class="dropdown-item">Listar Médicos</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Relatórios</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="/relatorios/consultas" class="dropdown-item">Detalhes de consultas</a>
+                    </div>
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contato</a>
         </div>
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
         <a href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Login</a>
         </div>
     </nav>
     <!-- Navbar End -->
-
     <div id="areaCadastro" class="container d-flex justify-content-center align-items-center">
         <div class="row border rounded-5 p-3 bg-white shadow box-area mt-2">
             <!-- Caixa da Esquerda -->
