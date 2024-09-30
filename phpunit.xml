@@ -1,9 +1,18 @@
-<phpunit bootstrap="vendor/autoload.php">
+<phpunit bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="Clinica Sickstem Test Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+        <report>
+            <html outputDirectory="./coverage-report" />
+            <text />
+        </report>
+    </coverage>
     <php>
         <ini name="error_reporting" value="-1"/>
         <ini name="display_errors" value="1"/>
