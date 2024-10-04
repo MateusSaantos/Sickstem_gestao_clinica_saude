@@ -15,7 +15,7 @@ Veja o funcionamento detalhado da nossa aplicação através do vídeo de aprese
 
 ![Diagrama Componentes](/img/componentes.png)
 
-Para mais informações sobre especificação de requisitos, projeto arquitetural e diagramas, vá para a pasta [Documentação do TP](Documentação_do_TP)
+Para mais informações sobre especificação de requisitos, projeto arquitetural e diagramas, vá para a pasta [Documentação do TP](./Documentação%20do%20TP)
 
 ## 👩‍💻 Ferramentas Necessárias para o Funcionamento do Sistema:
 
