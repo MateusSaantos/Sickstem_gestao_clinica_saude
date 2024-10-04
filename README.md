@@ -15,6 +15,8 @@ Veja o funcionamento detalhado da nossa aplicação através do vídeo de aprese
 
 ![Diagrama Componentes](/img/componentes.png)
 
+Para mais informações sobre especificação de requisitos, projeto arquitetural e diagramas, vá para a pasta [Documentação do TP](Documentação_do_TP)
+
 ## 👩‍💻 Ferramentas Necessárias para o Funcionamento do Sistema:
 
 [![PHP](https://img.shields.io/badge/-PHP-6959CD?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
